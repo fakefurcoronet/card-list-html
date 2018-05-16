@@ -1,0 +1,372 @@
+@charset "utf-8";
+
+/**
+ * ---------------------------------------------------
+ * default
+ * ---------------------------------------------------
+ */
+
+h1,
+h2,
+h3 {
+	font-weight: normal;
+	font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/**
+ * ---------------------------------------------------
+ * html
+ * ---------------------------------------------------
+ */
+
+html {
+	font-size: 62.5%;
+}
+
+/**
+ * ---------------------------------------------------
+ * body
+ * ---------------------------------------------------
+ */
+
+body {
+	line-height: 1.6;
+	font-size: 1.4rem;
+	font-family: YuGothic, "Yu Gothic Medium", "Yu Gothic",
+	"ÉqÉâÉMÉmäpÉSÉVÉbÉN", "ÉqÉâÉMÉmäpÉS Pro W3", "Hiragino Kaku Gothic Pro",
+	"ÉÅÉCÉäÉI", Meiryo, "ÇlÇr ÇoÉSÉVÉbÉN", "MS PGothic", Osaka, sans-serif;
+	color: #2D2B2D;
+	background: #FFFFFF;
+	position: relative;
+	-webkit-text-size-adjust: 100%;
+	max-width: 1300px;
+}
+
+/**
+ * ---------------------------------------------------
+ * wrapper
+ * ---------------------------------------------------
+ */
+
+#wrapper {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	opacity: 0;
+	display: none;
+}
+
+/**
+ * ---------------------------------------------------
+ * header
+ * ---------------------------------------------------
+ */
+
+#siteHeader {
+	height: 80px;
+}
+
+#siteHeader .hInner {
+	position: relative;
+	margin: 0 auto;
+	padding: 10px 0 20px 10px;
+	font-size: 2.0rem;
+}
+
+/**
+ * ---------------------------------------------------
+ * footer
+ * ---------------------------------------------------
+ */
+
+#siteFooter {
+	height: 50px;
+	clear: both;
+}
+
+#siteFooter .fInner {
+	margin: 0 auto;
+	text-align: center;
+	padding: 10px 0 10px;
+}
+
+/*
+ * ================================================
+ *
+ * [main]
+ *
+ * ================================================
+ */
+
+#lineup {
+	max-width: 1244px;
+	margin: 0 auto 0;
+	min-height: 500px;
+	padding: 0;
+}
+
+#lineup .singleThumb {
+	position: relative;
+}
+
+#lineup .singleThumb > a:hover {
+	opacity: 0.8;
+}
+
+#lineup .detailArea .description {
+	font-size: 1.2rem;
+	color: #808080;
+	line-height: 1.2;
+	width: 100%;
+	height: 25px;
+	margin-top: 4px;
+	display: table;
+	word-break: break-all;
+}
+
+#lineup .detailArea .description > * {
+	display: table-cell;
+}
+
+#lineup .detailArea .description span.pl4 {
+	padding-left: 4px;
+}
+
+#lineup .detailArea .intro-movie {
+	font-size: 12px;
+	font-weight: bold;
+	color: #e74d5a;
+	padding: 4px 0 1px 28px;
+	background: url("../../info/images/content/icon_video.png") center left/24px no-repeat;
+}
+
+#main {
+	max-width: 1240px;
+	max-width: 100%;
+	font-size: 1.4rem;
+}
+
+ul.tileList {
+	margin: 10px auto;
+	padding: 0;
+}
+
+ul.tileList li.singleThumb {
+	display: inline-block;
+	border: 1px solid #ccc;
+	text-align: left;
+	width: calc(25% - 14px);
+	min-height: 310px;
+	vertical-align: top;
+	margin: 5px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+ul.tileList li.singleThumb a {
+	display: block;
+	text-decoration: none;
+}
+
+ul.tileList li.singleThumb .titleArea {
+	background: #000;
+	height: 236px;
+	padding-bottom: 10px;
+	overflow: hidden;
+}
+
+.singleThumb .imgContainer {
+	width: 100%;
+	height: 158px;
+}
+
+.singleThumb .imgContainer span {
+	display: block;
+}
+
+.thumb {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 158px;
+}
+
+h3.contentTitle {
+	display: table;
+	width: 100%;
+	height: 57px;
+}
+
+h3.contentTitle span {
+	display: table-cell;
+	padding: 10px 10px 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+h3.contentTitle .contentName {
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	line-height: 1.8rem;
+	padding-top: 10px;
+	width: 95%;
+	height: 47px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+h3.contentTitle span.arrow {
+	top: 20px\9;
+}
+
+@media all and (-ms-high-contrast: none) {
+	h3.contentTitle span.arrow {
+		top: 20px;
+		/* IE10à»è„ */
+	}
+}
+
+.readMoreBtn {
+	clear: both;
+	display: table;
+	width: 120px;
+	float: right;
+	margin-top: 30px;
+}
+
+.readMoreBtn span {
+	display: table-cell;
+	vertical-align: middle;
+	height: 28px;
+}
+
+.readMoreBtn a {
+	text-decoration: none;
+	display: block;
+}
+
+.readMoreBtn a:hover {
+	opacity: 0.8;
+}
+
+.readMoreBtn .moreText {
+	color: #1a3068;
+	font-size: 14px;
+	padding-right: 15px;
+}
+
+.arrowDown {
+	position: relative;
+	height: 28px;
+	width: 28px;
+	background: #1E90FF;
+}
+
+.arrowDown::before {
+	content: '';
+	width: 14px;
+	height: 14px;
+	border: 0px;
+	border-right: solid 3px #fff;
+	border-bottom: solid 3px #fff;
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	position: absolute;
+	top: 5px;
+	left: 7px;
+}
+
+.arrow {
+	position: relative;
+	width: 5%;
+}
+
+.arrow::before {
+	content: '';
+	width: 10px;
+	height: 10px;
+	border: 0px;
+	border-top: solid 2px #ccc;
+	border-right: solid 2px #ccc;
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -4px;
+}
+
+.detailArea {
+	display: block;
+	background: #fff;
+	padding: 5px;
+	height: 130px;
+	overflow: hidden;
+}
+
+.schedule .date {
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+}
+
+/**
+ ****************************************************
+ *
+ * screens smaller than 767
+ *
+ ****************************************************
+ */
+
+@media only screen and (max-width: 767px) {
+	body {
+		min-width: 320px;
+	}
+	#container {
+		padding-top: 43px;
+	}
+	#lineup {
+		padding: 0;
+		margin-top: 0;
+	}
+	#lineup .detailArea .description {
+		font-size: 1.1rem;
+	}
+	ul.tileList {
+		margin: 0 auto;
+	}
+	ul.tileList li.singleThumb {
+		width: calc(50% - 8px);
+		margin: 4px;
+		float: left;
+	}
+	.singleThumb .imgContainer {
+		height: 136px;
+	}
+	h3.contentTitle {
+		height: 80px;
+	}
+	h3.contentTitle .contentName {
+		height: 66px;
+		-webkit-line-clamp: 3;
+	}
+	.detailArea {
+		height: 135px;
+	}
+}
