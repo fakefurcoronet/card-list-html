@@ -3,44 +3,50 @@ const addDispCnt = 4;     // 追加表示件数
 
 (function ($) {
 	$(function () {
+		let maxDispCnt = 0;     // 最大表示件数
+		let currentDispCnt = 0; // 現在の表示件数
+		let tileList = $('#tileList').children('li'); // 一覧のli子要素をすべて取得
+
 		setTimeout(function () {
-			$('#wrapper').show();
 			$('#wrapper').stop().animate({
 				opacity: 1
 			}, {
 				delay: 300,
 				duration: 250
 			});
-		}, 300);
+		}, 150);
 
-		// もっと見るボタンの表示/非表示設定
-		$('.readMoreBtn').each(function () {
-			if ($(this).data('program-count') <= $(this).data('current-count')) {
-				$(this).hide();
-			} else {
-				// 一覧のHTMLを配列で取得する
-				var tileList = $('#tileList').children();
-				$(tileList).each(function (i, elem) {
-					// 初期表示件数以外は非表示にする
-					if (i >= defaultDispCnt) {
-						$(this).hide();
-					}
-				});
+		// 一覧の初期表示
+		$(tileList).each(function (i, elem) {
+			// 初期表示件数のみ表示
+			if (i < defaultDispCnt) {
+				$(this).show().css("display", "inline-block");
+				currentDispCnt++;
+			}
+			maxDispCnt++;
+
+			// もっと見るボタンを表示
+			if (maxDispCnt > currentDispCnt) {
+				$('.readMoreBtn').show().css("display", "table");
 			}
 		});
+
+		// もっと見るボタンクリックイベント
 		$('.readMoreBtn').click(function () {
-			const currentCount = $(this).data('current-count');
-			const newCount = currentCount + addDispCnt;
-			const tileList = $(this).prev().children();
+			var newCount = currentDispCnt + addDispCnt; // 新しく表示する件数
+
+			// 新しく表示する件数のみ表示
 			$(tileList).each(function (i, elem) {
-				if (currentCount <= i && i < newCount) {
-					$(elem).show();
+				if (currentDispCnt <= i && i < newCount) {
+					$(this).show().css("display", "inline-block");
+					currentDispCnt++;
 				}
 			});
-			if ($(this).data('thumb-count') <= newCount) {
+
+			// もっと見るボタンを非表示
+			if (maxDispCnt <= newCount) {
 				$(this).hide();
 			}
-			$(this).data('current-count', newCount);
 
 			return false;
 		});
